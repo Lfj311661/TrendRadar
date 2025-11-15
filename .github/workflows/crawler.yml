@@ -13,6 +13,13 @@ permissions:
 jobs:
   crawl:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      EMAIL_SMTP_SERVER: ${{ secrets.EMAIL_SMTP_SERVER }}
+      EMAIL_SMTP_PORT: ${{ secrets.EMAIL_SMTP_PORT }}
 
     steps:
       - name: Checkout repository
